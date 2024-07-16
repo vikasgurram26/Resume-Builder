@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Resume</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        hr {
+            border-top: 1px solid #dee2e6;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .btn-primary {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume</h1>
+        <h2>Name: {{ name }}</h2>
+        <h2>Email: {{ email }}</h2>
+        <hr>
+        <h3>About:</h3>
+        <p>{{ about }}</p>
+        <hr>
+        <h3>College: {{ college }}</h3>
+        <hr>
+        <h3>Degree: {{ degree }}</h3>
+        <hr>
+        <h3>Project:</h3>
+        <p>{{ project }}</p>
+        <form action="{% url 'download' id=id %}">
+            <button type="submit" class="btn btn-primary">Download Resume</button>
+        </form>
+    </div>
+</body>
+</html>
